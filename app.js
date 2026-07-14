@@ -284,4 +284,5 @@ function init() {
   window.__i18n = { switch: (l) => switchLanguage(l, allTranslations), current: () => Cookie.get(COOKIE_NAME) || DEFAULT_LANG };
 }
 
-document.addEventListener('DOMContentLoaded', init);
+// Execute initialization immediately to prevent translation flashing
+init();
