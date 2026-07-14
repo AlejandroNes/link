@@ -18,5 +18,18 @@ window.locales.es = {
     cv: { title: "Descargar CV", description: "Mi trayectoria y experiencia detallada" }
   },
   cta: { eyebrow: "// disponibilidad limitada", title: "¿Listo para llevar tu idea a producción?", subtitle: "Agenda una llamada gratuita de 30 min y define el alcance de tu proyecto.", button: "Agendar mi llamada gratuita" },
+  wa_modal: {
+    greeting: "Hola",
+    title: "Por favor completa los datos",
+    name_label: "Nombre completo",
+    name_placeholder: "Tu nombre",
+    service_label: "Motivo de contacto",
+    select_default: "Selecciona una opción",
+    opt_service: "Necesito un servicio",
+    opt_collab: "Colaboración",
+    opt_other: "Otro",
+    send: "Enviar",
+    email_fallback: "o escribir al correo:"
+  },
   footer: "© 2026 Alejandro Nes — Diseñado & construido con pasión"
 };

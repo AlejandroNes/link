@@ -68,6 +68,15 @@ function applyTranslations(translations) {
     }
   });
 
+  // Handle placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const value = t(translations, key);
+    if (value !== null) {
+      el.setAttribute('placeholder', value);
+    }
+  });
+
   // Render testimonials carousel dynamically
   renderTestimonials(translations);
 
@@ -210,6 +219,49 @@ function initStatsAnimation() {
   observer.observe(statsContainer);
 }
 
+// ── WhatsApp Floating Modal ──────────────────────────────
+function initWhatsAppModal() {
+  const btn = document.getElementById('wa-float-btn');
+  const modal = document.getElementById('wa-modal');
+  const closeBtn = document.getElementById('wa-modal-close');
+  const form = document.getElementById('wa-form');
+  
+  const tooltip = document.getElementById('wa-tooltip');
+  
+  if (!btn || !modal || !form) return;
+
+  // Hide tooltip after 4 seconds automatically
+  if (tooltip) {
+    setTimeout(() => {
+      tooltip.classList.add('hidden');
+    }, 4000);
+  }
+
+  btn.addEventListener('click', () => {
+    modal.classList.toggle('active');
+    if (tooltip) tooltip.classList.add('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('wa-name').value.trim();
+    const select = document.getElementById('wa-select').value;
+    
+    if (name && select) {
+      const phone = "59178790800";
+      const message = `Hola, soy ${name}. ${select}.`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+      modal.classList.remove('active');
+      form.reset();
+    }
+  });
+}
+
 // ── Bootstrap ─────────────────────────────────────────────
 function init() {
   // window.locales is loaded from locales/es.js and locales/en.js
@@ -220,6 +272,7 @@ function init() {
   applyTranslations(allTranslations[lang] || allTranslations[DEFAULT_LANG]);
   
   initStatsAnimation();
+  initWhatsAppModal();
 
   window.__i18n = { switch: (l) => switchLanguage(l, allTranslations), current: () => Cookie.get(COOKIE_NAME) || DEFAULT_LANG };
 }

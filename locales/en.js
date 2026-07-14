@@ -18,5 +18,18 @@ window.locales.en = {
     cv: { title: "Download CV", description: "My detailed background and experience" }
   },
   cta: { eyebrow: "// limited availability", title: "Ready to take your idea to production?", subtitle: "Book a free 30-min call and define the scope of your project.", button: "Book my free call" },
+  wa_modal: {
+    greeting: "Hi there",
+    title: "Please fill in the details",
+    name_label: "Full Name",
+    name_placeholder: "Your name",
+    service_label: "Reason for contact",
+    select_default: "Select an option",
+    opt_service: "I need a service",
+    opt_collab: "Collaboration",
+    opt_other: "Other",
+    send: "Send",
+    email_fallback: "or write to email:"
+  },
   footer: "© 2026 Alejandro Nes — Designed & built with passion"
 };
