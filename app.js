@@ -85,16 +85,13 @@ function renderServices(translations) {
       const isFeatured = i === 0;
       const iconClass  = isFeatured ? 'link-icon' : 'link-icon alt';
       return `
-      <a href="#" class="link-btn${isFeatured ? ' featured' : ''}">
+      <div class="link-btn${isFeatured ? ' featured' : ''}">
         <div class="${iconClass}">${SERVICE_ICONS[i] || SERVICE_ICONS[0]}</div>
         <div class="link-text">
           <div class="link-title">${svc.title}</div>
           <div class="link-sub">${svc.description}</div>
         </div>
-        <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 18l6-6-6-6"/>
-        </svg>
-      </a>`;
+      </div>`;
     })
     .join('');
 
@@ -226,6 +223,53 @@ function detectLang() {
   return DEFAULT_LANG;
 }
 
+// ── Number Counter Animation for Stats ─────────────────────
+function initStatsAnimation() {
+  const statElements = document.querySelectorAll('.stat-num');
+  
+  const animateNumbers = (el) => {
+    const text = el.innerText;
+    // Extract the numeric part and the suffix (+, %, etc)
+    const match = text.match(/^(\d+)(.*)$/);
+    if (!match) return;
+    
+    const target = parseInt(match[1], 10);
+    const suffix = match[2];
+    const duration = 2000; // 2 seconds
+    const fps = 60;
+    const frames = duration / (1000 / fps);
+    let currentFrame = 0;
+    
+    // Set initial text to 0 + suffix
+    el.innerText = '0' + suffix;
+    
+    const counter = setInterval(() => {
+      currentFrame++;
+      // Easing out function for smooth deceleration
+      const progress = 1 - Math.pow(1 - currentFrame / frames, 3);
+      const currentVal = Math.floor(target * progress);
+      
+      el.innerText = currentVal + suffix;
+      
+      if (currentFrame >= frames) {
+        clearInterval(counter);
+        el.innerText = target + suffix; // Ensure exact final value
+      }
+    }, 1000 / fps);
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumbers(entry.target);
+        obs.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statElements.forEach(el => observer.observe(el));
+}
+
 // ── Bootstrap ─────────────────────────────────────────────
 function init() {
   // window.locales is loaded from locales/es.js and locales/en.js
@@ -234,6 +278,8 @@ function init() {
 
   renderLangSwitch(allTranslations, lang);
   applyTranslations(allTranslations[lang] || allTranslations[DEFAULT_LANG]);
+  
+  initStatsAnimation();
 
   window.__i18n = { switch: (l) => switchLanguage(l, allTranslations), current: () => Cookie.get(COOKIE_NAME) || DEFAULT_LANG };
 }

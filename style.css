@@ -211,7 +211,7 @@ body::after {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  border: 3px solid var(--bg);
+
   background: linear-gradient(145deg, #1c1930, #0f0d18);
   display: flex;
   align-items: center;
@@ -485,18 +485,22 @@ body::after {
     scrollbar-width: thin;
     scrollbar-color: var(--purple-1) rgba(255, 255, 255, 0.03);
   }
+
   .carousel-container::-webkit-scrollbar {
     display: block;
     height: 4px;
   }
+
   .carousel-container::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 4px;
   }
+
   .carousel-container::-webkit-scrollbar-thumb {
     background: var(--purple-1);
     border-radius: 4px;
   }
+
   .carousel-container::-webkit-scrollbar-thumb:hover {
     background: var(--purple-glow);
   }
