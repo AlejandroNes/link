@@ -157,8 +157,9 @@ body::after {
 
 .avatar-wrap {
   position: relative;
-  width: 104px;
-  height: 104px;
+  width: 120px;
+  height: 120px;
+  margin-top: -20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,8 +209,8 @@ body::after {
 
 .avatar {
   position: relative;
-  width: 96px;
-  height: 96px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 
   background: linear-gradient(145deg, #1c1930, #0f0d18);
