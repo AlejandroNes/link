@@ -462,6 +462,28 @@ body::after {
   box-shadow: 0 4px 20px -3px rgba(108, 58, 232, 0.75);
 }
 
+/* WhatsApp link button — more prominent than other link-btns */
+.link-btn-whatsapp {
+  border-color: rgba(108, 58, 232, 0.5);
+  background: linear-gradient(135deg,
+      rgba(108, 58, 232, 0.18),
+      rgba(33, 19, 67, 0.35));
+  box-shadow:
+    0 0 20px -4px rgba(108, 58, 232, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.link-btn-whatsapp:hover {
+  border-color: var(--purple-1);
+  box-shadow:
+    0 0 28px -4px rgba(108, 58, 232, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.link-btn-whatsapp .link-icon {
+  box-shadow: 0 4px 18px -3px rgba(108, 58, 232, 0.7);
+}
+
 /* ---------- reusable utilities ---------- */
 .carousel-container {
   display: flex;

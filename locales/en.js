@@ -3,7 +3,7 @@ window.locales.en = {
   meta: { lang: "en", label: "English", flag: "🇺🇸" },
   profile: { role: "Web & Software Developer", bio: "I design and build high-performance digital products — from e-commerce to AI automation. Clean code, measurable results." },
   sections: { socials: "Connect · Socials", testimonials: "Testimonials", stack: "Stack · Technologies", stats: "Career · In numbers" },
-  socials: { whatsapp: "Contact via WhatsApp" },
+  socials: { whatsapp: "Contact via WhatsApp", whatsapp_sub: "Fast reply · Available now" },
   testimonials: [
     { name: "Carlos Méndez", rating: 5, description: "Alejandro transformed our idea into an amazing platform. His attention to detail and problem-solving skills are unmatched. 100% recommended." },
     { name: "Laura Jiménez", rating: 5, description: "Working with him was a phenomenal experience. He managed to optimize loading times and significantly improve our website's design." },
