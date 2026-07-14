@@ -13,9 +13,9 @@ window.locales.es = {
   ],
   stats: { projects: "Proyectos", experience: "Años exp.", satisfaction: "Satisfacción" },
   links: {
-    portfolio: "Portafolio",
-    company: "Empresa",
-    cv: "Descargar CV"
+    portfolio: { title: "Portafolio", description: "Proyectos y casos de éxito recientes" },
+    company: { title: "Empresa", description: "Conoce más sobre nuestra visión y servicios" },
+    cv: { title: "Descargar CV", description: "Mi trayectoria y experiencia detallada" }
   },
   cta: { eyebrow: "// disponibilidad limitada", title: "¿Listo para llevar tu idea a producción?", subtitle: "Agenda una llamada gratuita de 30 min y define el alcance de tu proyecto.", button: "Agendar mi llamada gratuita" },
   footer: "© 2026 Alejandro Nes — Diseñado & construido con pasión"

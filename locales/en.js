@@ -13,9 +13,9 @@ window.locales.en = {
   ],
   stats: { projects: "Projects", experience: "Years exp.", satisfaction: "Satisfaction" },
   links: {
-    portfolio: "Portfolio",
-    company: "Company",
-    cv: "Download CV"
+    portfolio: { title: "Portfolio", description: "Recent projects and success stories" },
+    company: { title: "Company", description: "Learn more about our vision and services" },
+    cv: { title: "Download CV", description: "My detailed background and experience" }
   },
   cta: { eyebrow: "// limited availability", title: "Ready to take your idea to production?", subtitle: "Book a free 30-min call and define the scope of your project.", button: "Book my free call" },
   footer: "© 2026 Alejandro Nes — Designed & built with passion"
