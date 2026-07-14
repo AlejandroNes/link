@@ -12,12 +12,12 @@
 
 <body>
 
-  <!-- ── Language Selector ─────────────────────────────── -->
-  <div class="lang-switch" id="lang-switch" role="navigation" aria-label="Language selector">
-    <!-- Rendered dynamically by i18n.js based on available locales -->
-  </div>
-
   <div class="page">
+    <!-- ── Language Selector ─────────────────────────────── -->
+    <div class="lang-switch" id="lang-switch" role="navigation" aria-label="Language selector">
+      <!-- Rendered dynamically by i18n.js based on available locales -->
+    </div>
+
 
     <!-- ── Profile ────────────────────────────────────── -->
     <div class="profile">
@@ -91,8 +91,31 @@
     <!-- ── Services Carousel ───────────────────────────── -->
     <div class="section">
       <div class="section-label" data-i18n="sections.services"></div>
-      <div class="carousel-container" id="services-carousel">
-        <!-- Cards rendered dynamically by i18n.js -->
+      <div class="carousel-wrapper">
+        <div class="carousel-container" id="services-carousel">
+          <!-- Cards rendered dynamically by i18n.js -->
+        </div>
+      </div>
+      
+      <div class="links-col">
+        <a href="#" class="btn-full btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M2 15h10"/><path d="M9 18l3-3-3-3"/>
+          </svg>
+          <span data-i18n="links.portfolio"></span>
+        </a>
+        <a href="#" class="btn-full btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+          <span data-i18n="links.company"></span>
+        </a>
+        <a href="#" class="btn-full btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/>
+          </svg>
+          <span data-i18n="links.cv"></span>
+        </a>
       </div>
     </div>
 

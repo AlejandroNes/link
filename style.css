@@ -479,6 +479,29 @@ body::after {
   display: none;
 }
 
+/* On desktop, show a custom scrollbar line instead of arrows */
+@media (hover: hover) and (pointer: fine) {
+  .carousel-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple-1) rgba(255, 255, 255, 0.03);
+  }
+  .carousel-container::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+  }
+  .carousel-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+  }
+  .carousel-container::-webkit-scrollbar-thumb {
+    background: var(--purple-1);
+    border-radius: 4px;
+  }
+  .carousel-container::-webkit-scrollbar-thumb:hover {
+    background: var(--purple-glow);
+  }
+}
+
 .carousel-container>* {
   scroll-snap-align: start;
   flex: 0 0 82%;
@@ -507,6 +530,28 @@ body::after {
 
 .btn-full:hover {
   filter: brightness(1.1);
+}
+
+.links-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--line);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--line-strong);
+}
+
+.btn-outline svg {
+  color: var(--purple-glow);
 }
 
 .btn-whatsapp {
@@ -781,12 +826,11 @@ footer {
 
 /* ---------- lang switch ---------- */
 .lang-switch {
-  position: fixed;
-  top: 18px;
-  right: 18px;
   display: flex;
+  justify-content: flex-end;
   gap: 6px;
-  z-index: 100;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 .lang-btn {

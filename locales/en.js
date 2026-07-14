@@ -12,6 +12,11 @@ window.locales.en = {
     { title: "UI/UX Audit", description: "Comprehensive analysis of your digital interfaces to find improvement areas, optimize user flows and boost overall usability." }
   ],
   stats: { projects: "Projects", experience: "Years exp.", satisfaction: "Satisfaction" },
+  links: {
+    portfolio: "Portfolio",
+    company: "Company",
+    cv: "Download CV"
+  },
   cta: { eyebrow: "// limited availability", title: "Ready to take your idea to production?", subtitle: "Book a free 30-min call and define the scope of your project.", button: "Book my free call" },
   footer: "© 2026 Alejandro Nes — Designed & built with passion"
 };

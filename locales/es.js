@@ -12,6 +12,11 @@ window.locales.es = {
     { title: "Auditoría UI/UX", description: "Análisis exhaustivo de tus interfaces digitales para encontrar áreas de mejora, optimizar flujos de usuario y potenciar la usabilidad global." }
   ],
   stats: { projects: "Proyectos", experience: "Años exp.", satisfaction: "Satisfacción" },
+  links: {
+    portfolio: "Portafolio",
+    company: "Empresa",
+    cv: "Descargar CV"
+  },
   cta: { eyebrow: "// disponibilidad limitada", title: "¿Listo para llevar tu idea a producción?", subtitle: "Agenda una llamada gratuita de 30 min y define el alcance de tu proyecto.", button: "Agendar mi llamada gratuita" },
   footer: "© 2026 Alejandro Nes — Diseñado & construido con pasión"
 };

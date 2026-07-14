@@ -144,15 +144,50 @@ function switchLanguage(lang, allTranslations) {
   applyTranslations(allTranslations[lang]);
 }
 
-// ── Carousel drag-to-scroll (mouse + touch) ───────────────
+// ── Carousel drag-to-scroll & auto-scroll ─────────────────
 function initCarouselDrag(carousel) {
   let isDown   = false;
   let startX   = 0;
   let scrollLeft = 0;
   let dragged  = false;
+  let autoScrollInterval;
 
-  const start = (x) => { isDown = true; dragged = false; startX = x - carousel.offsetLeft; scrollLeft = carousel.scrollLeft; };
-  const stop  = () => { isDown = false; };
+  const startAutoScroll = () => {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = setInterval(() => {
+      const firstItem = carousel.querySelector('.link-btn');
+      if (!firstItem) return;
+      
+      const itemWidth = firstItem.offsetWidth + 14; // include CSS gap
+      let nextScroll = carousel.scrollLeft + itemWidth;
+      
+      // If we've reached the end, loop back to start
+      if (nextScroll >= carousel.scrollWidth - carousel.clientWidth + 10) {
+        nextScroll = 0;
+      }
+      
+      carousel.scrollTo({
+        left: nextScroll,
+        behavior: 'smooth'
+      });
+    }, 4000);
+  };
+
+  const stopAutoScroll = () => clearInterval(autoScrollInterval);
+
+  const start = (x) => { 
+    isDown = true; 
+    dragged = false; 
+    startX = x - carousel.offsetLeft; 
+    scrollLeft = carousel.scrollLeft; 
+    stopAutoScroll(); 
+  };
+  
+  const stop  = () => { 
+    isDown = false; 
+    startAutoScroll(); 
+  };
+  
   const move  = (x) => {
     if (!isDown) return;
     dragged = true;
@@ -163,11 +198,18 @@ function initCarouselDrag(carousel) {
   carousel.addEventListener('mouseleave', stop);
   carousel.addEventListener('mouseup',    stop);
   carousel.addEventListener('mousemove',  e => { e.preventDefault(); move(e.pageX); });
+  
+  // Touch support for pausing auto-scroll
+  carousel.addEventListener('touchstart', stopAutoScroll, {passive: true});
+  carousel.addEventListener('touchend', startAutoScroll, {passive: true});
 
   // Prevent link click if the user was dragging
   carousel.addEventListener('click', e => {
     if (dragged) e.preventDefault();
   }, true);
+
+  // Start auto-scroll on load
+  startAutoScroll();
 }
 
 // ── Detect preferred language ──────────────────────────────
