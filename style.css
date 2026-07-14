@@ -716,25 +716,28 @@ body::after {
   width: 100%;
   padding: 16px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
-  color: #fff;
+  background: linear-gradient(135deg, #0f0d18, #0a0912);
+  border: 1px solid var(--line);
+  color: var(--white);
   font-weight: 600;
   font-size: 14.5px;
   text-decoration: none;
   box-shadow:
-    0 8px 26px -8px rgba(108, 58, 232, 0.8),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 8px 26px -8px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transition:
     transform 0.25s var(--ease),
+    border-color 0.25s var(--ease),
     box-shadow 0.25s var(--ease);
   letter-spacing: -0.005em;
 }
 
 .cta-btn:hover {
   transform: translateY(-2px);
+  border-color: var(--purple-1);
   box-shadow:
-    0 12px 32px -8px rgba(108, 58, 232, 0.95),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 12px 32px -8px rgba(108, 58, 232, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .cta-btn:active {

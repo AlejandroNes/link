@@ -68,34 +68,36 @@ function applyTranslations(translations) {
     }
   });
 
-  // Render services carousel dynamically
-  renderServices(translations);
+  // Render testimonials carousel dynamically
+  renderTestimonials(translations);
 
   // Update html[lang] for accessibility
   document.documentElement.lang = translations.meta.lang;
 }
 
-// ── Render service cards ───────────────────────────────────
-function renderServices(translations) {
-  const carousel = document.getElementById('services-carousel');
-  if (!carousel || !Array.isArray(translations.services)) return;
+// ── Render testimonials ────────────────────────────────────
+function renderTestimonials(translations) {
+  const carousel = document.getElementById('testimonials-carousel');
+  if (!carousel || !Array.isArray(translations.testimonials)) return;
 
-  carousel.innerHTML = translations.services
-    .map((svc, i) => {
-      const isFeatured = i === 0;
-      const iconClass  = isFeatured ? 'link-icon' : 'link-icon alt';
-      return `
-      <div class="link-btn${isFeatured ? ' featured' : ''}">
-        <div class="${iconClass}">${SERVICE_ICONS[i] || SERVICE_ICONS[0]}</div>
-        <div class="link-text">
-          <div class="link-title">${svc.title}</div>
-          <div class="link-sub">${svc.description}</div>
-        </div>
-      </div>`;
-    })
-    .join('');
+  // Star SVG
+  const starSvg = `<svg viewBox="0 0 20 20" fill="currentColor" style="width:14px; height:14px; color:#F59E0B;"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
 
-  initCarouselDrag(carousel);
+  // Create cards
+  const cardsHtml = translations.testimonials.map((t, i) => {
+    return `
+    <div class="link-btn" style="flex-direction: column; align-items: flex-start; width: 65vw; max-width: 320px; flex: 0 0 auto;">
+      <div style="display: flex; gap: 2px; margin-bottom: 8px;">
+        ${starSvg.repeat(t.rating)}
+      </div>
+      <div class="link-text" style="width: 100%;">
+        <div class="link-title" style="margin-bottom: 6px;">${t.name}</div>
+        <div class="link-sub" style="white-space: normal; line-height: 1.4;">"${t.description}"</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  carousel.innerHTML = cardsHtml;
 }
 
 // ── Build language selector UI ─────────────────────────────
@@ -106,13 +108,14 @@ function renderLangSwitch(allTranslations, currentLang) {
   container.innerHTML = AVAILABLE_LANGS.map(code => {
     const meta    = allTranslations[code]?.meta;
     const isActive = code === currentLang;
+    const flagImg = code === 'es' ? 'images/idioma español.png' : 'images/idioma ingles.png';
     return `
       <button
         class="lang-btn${isActive ? ' active' : ''}"
         data-lang="${code}"
         aria-pressed="${isActive}"
         title="${meta?.label || code}"
-      >${meta?.flag || ''} ${code.toUpperCase()}</button>`;
+      ><img src="${flagImg}" alt="${code}" style="width:16px; height:16px; border-radius:50%; object-fit:cover;"> ${code.toUpperCase()}</button>`;
   }).join('');
 
   // Attach click handlers
@@ -141,73 +144,8 @@ function switchLanguage(lang, allTranslations) {
   applyTranslations(allTranslations[lang]);
 }
 
-// ── Carousel drag-to-scroll & auto-scroll ─────────────────
-function initCarouselDrag(carousel) {
-  let isDown   = false;
-  let startX   = 0;
-  let scrollLeft = 0;
-  let dragged  = false;
-  let autoScrollInterval;
 
-  const startAutoScroll = () => {
-    clearInterval(autoScrollInterval);
-    autoScrollInterval = setInterval(() => {
-      const firstItem = carousel.querySelector('.link-btn');
-      if (!firstItem) return;
-      
-      const itemWidth = firstItem.offsetWidth + 14; // include CSS gap
-      let nextScroll = carousel.scrollLeft + itemWidth;
-      
-      // If we've reached the end, loop back to start
-      if (nextScroll >= carousel.scrollWidth - carousel.clientWidth + 10) {
-        nextScroll = 0;
-      }
-      
-      carousel.scrollTo({
-        left: nextScroll,
-        behavior: 'smooth'
-      });
-    }, 4000);
-  };
 
-  const stopAutoScroll = () => clearInterval(autoScrollInterval);
-
-  const start = (x) => { 
-    isDown = true; 
-    dragged = false; 
-    startX = x - carousel.offsetLeft; 
-    scrollLeft = carousel.scrollLeft; 
-    stopAutoScroll(); 
-  };
-  
-  const stop  = () => { 
-    isDown = false; 
-    startAutoScroll(); 
-  };
-  
-  const move  = (x) => {
-    if (!isDown) return;
-    dragged = true;
-    carousel.scrollLeft = scrollLeft - (x - carousel.offsetLeft - startX) * 1.5;
-  };
-
-  carousel.addEventListener('mousedown',  e => start(e.pageX));
-  carousel.addEventListener('mouseleave', stop);
-  carousel.addEventListener('mouseup',    stop);
-  carousel.addEventListener('mousemove',  e => { e.preventDefault(); move(e.pageX); });
-  
-  // Touch support for pausing auto-scroll
-  carousel.addEventListener('touchstart', stopAutoScroll, {passive: true});
-  carousel.addEventListener('touchend', startAutoScroll, {passive: true});
-
-  // Prevent link click if the user was dragging
-  carousel.addEventListener('click', e => {
-    if (dragged) e.preventDefault();
-  }, true);
-
-  // Start auto-scroll on load
-  startAutoScroll();
-}
 
 // ── Detect preferred language ──────────────────────────────
 function detectLang() {
@@ -225,8 +163,9 @@ function detectLang() {
 
 // ── Number Counter Animation for Stats ─────────────────────
 function initStatsAnimation() {
-  const statElements = document.querySelectorAll('.stat-num');
-  
+  const statsContainer = document.querySelector('.stats');
+  if (!statsContainer) return;
+
   const animateNumbers = (el) => {
     const text = el.innerText;
     // Extract the numeric part and the suffix (+, %, etc)
@@ -261,13 +200,14 @@ function initStatsAnimation() {
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        animateNumbers(entry.target);
+        // Animate all stat numbers when the container enters the viewport
+        statsContainer.querySelectorAll('.stat-num').forEach(el => animateNumbers(el));
         obs.unobserve(entry.target); // Only animate once
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
-  statElements.forEach(el => observer.observe(el));
+  observer.observe(statsContainer);
 }
 
 // ── Bootstrap ─────────────────────────────────────────────

@@ -2,14 +2,14 @@ window.locales = window.locales || {};
 window.locales.en = {
   meta: { lang: "en", label: "English", flag: "🇺🇸" },
   profile: { role: "Web & Software Developer", bio: "I design and build high-performance digital products — from e-commerce to AI automation. Clean code, measurable results." },
-  sections: { socials: "Connect · Socials", services: "Services · 05", stack: "Stack · Technologies", stats: "Career · In numbers" },
+  sections: { socials: "Connect · Socials", testimonials: "Testimonials", stack: "Stack · Technologies", stats: "Career · In numbers" },
   socials: { whatsapp: "Contact via WhatsApp" },
-  services: [
-    { title: "Web Development", description: "Custom websites and applications focused on speed, accessibility, and highly scalable exceptional user experiences." },
-    { title: "Online Stores", description: "E-commerce development optimized to maximize conversion, with secure payment integrations and efficient inventory management." },
-    { title: "Automation", description: "Creation of intelligent workflows, connecting your daily tools to save time and reduce operational errors across your business." },
-    { title: "AI Solutions", description: "Artificial intelligence integrations for your business, from smart chatbots to predictive data analysis and automated content generation." },
-    { title: "UI/UX Audit", description: "Comprehensive analysis of your digital interfaces to find improvement areas, optimize user flows and boost overall usability." }
+  testimonials: [
+    { name: "Carlos Méndez", rating: 5, description: "Alejandro transformed our idea into an amazing platform. His attention to detail and problem-solving skills are unmatched. 100% recommended." },
+    { name: "Laura Jiménez", rating: 5, description: "Working with him was a phenomenal experience. He managed to optimize loading times and significantly improve our website's design." },
+    { name: "Miguel Salazar", rating: 5, description: "Professional, creative, and always willing to help. The system he developed exceeded all our expectations from day one." },
+    { name: "Sofía Arango", rating: 5, description: "Excellent code quality and very proactive. He helped us scale our architecture to support thousands of concurrent users seamlessly." },
+    { name: "Diego Torres", rating: 5, description: "The best technical decision we made was hiring him. His architectural vision and commitment allowed us to launch on time." }
   ],
   stats: { projects: "Projects", experience: "Years exp.", satisfaction: "Satisfaction" },
   links: {

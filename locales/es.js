@@ -2,14 +2,14 @@ window.locales = window.locales || {};
 window.locales.es = {
   meta: { lang: "es", label: "Español", flag: "🇪🇸" },
   profile: { role: "Desarrollador Web & Software", bio: "Diseño y construyo productos digitales de alto rendimiento — desde e-commerce hasta automatización con IA. Código limpio, resultados medibles." },
-  sections: { socials: "Conecta · Redes", services: "Servicios · 05", stack: "Stack · Tecnologías", stats: "Trayectoria · En números" },
+  sections: { socials: "Conectemos", testimonials: "Testimonios", stack: "Tecnologías", stats: "Trayectoria · En números" },
   socials: { whatsapp: "Contactar por WhatsApp" },
-  services: [
-    { title: "Desarrollo Web", description: "Sitios y aplicaciones a medida, enfocados en velocidad, accesibilidad y experiencias de usuario excepcionales y altamente escalables." },
-    { title: "Tiendas Online", description: "Desarrollo de e-commerce optimizado para maximizar la conversión, con integraciones de pago seguras y gestión de inventario eficiente." },
-    { title: "Automatización", description: "Creación de flujos de trabajo inteligentes, conectando tus herramientas diarias para ahorrar tiempo y reducir errores operativos." },
-    { title: "Soluciones con IA", description: "Integraciones de inteligencia artificial para tu negocio, desde chatbots inteligentes hasta análisis predictivo y generación de contenido automatizado." },
-    { title: "Auditoría UI/UX", description: "Análisis exhaustivo de tus interfaces digitales para encontrar áreas de mejora, optimizar flujos de usuario y potenciar la usabilidad global." }
+  testimonials: [
+    { name: "Carlos Méndez", rating: 5, description: "Alejandro transformó nuestra idea en una plataforma increíble. Su atención al detalle y capacidad de resolución son insuperables. 100% recomendado." },
+    { name: "Laura Jiménez", rating: 5, description: "Trabajar con él fue una experiencia fenomenal. Logró optimizar los tiempos de carga y mejorar el diseño de nuestra web." },
+    { name: "Miguel Salazar", rating: 5, description: "Profesional, creativo y siempre dispuesto a ayudar. El sistema que desarrolló superó todas nuestras expectativas desde el primer día." },
+    { name: "Sofía Arango", rating: 5, description: "Excelente calidad de código y muy proactivo. Nos ayudó a escalar nuestra arquitectura para soportar miles de usuarios concurrentes sin problemas." },
+    { name: "Diego Torres", rating: 5, description: "La mejor decisión técnica que tomamos fue contar con él. Su visión arquitectónica y compromiso nos permitieron lanzar el producto a tiempo." }
   ],
   stats: { projects: "Proyectos", experience: "Años exp.", satisfaction: "Satisfacción" },
   links: {
