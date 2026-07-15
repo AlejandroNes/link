@@ -1,26 +1,46 @@
 window.locales = window.locales || {};
 window.locales.en = {
   meta: { lang: "en", label: "English", flag: "🇺🇸" },
-  profile: { role: "Web & Software Developer", bio: "I design and build high-performance digital products — from e-commerce to AI automation. Clean code, measurable results." },
-  sections: { socials: "Connect · Socials", testimonials: "Testimonials", stack: "Stack · Technologies", stats: "Career · In numbers" },
-  socials: { whatsapp: "Contact via WhatsApp", whatsapp_sub: "Fast reply · Available now" },
+  profile: { role: "Software Engineer", bio: "I develop high-performance software solutions, from e-commerce platforms to AI-powered applications and automations." },
+  sections: { socials: "Social Media", testimonials: "Testimonials", stack: "Tech Stack", stats: "Career" },
+  socials: { whatsapp: "My Website", whatsapp_sub: "Find my services and portfolio" },
   testimonials: [
-    { name: "Carlos Méndez", rating: 5, description: "Alejandro transformed our idea into an amazing platform. His attention to detail and problem-solving skills are unmatched. 100% recommended." },
-    { name: "Laura Jiménez", rating: 5, description: "Working with him was a phenomenal experience. He managed to optimize loading times and significantly improve our website's design." },
-    { name: "Miguel Salazar", rating: 5, description: "Professional, creative, and always willing to help. The system he developed exceeded all our expectations from day one." },
-    { name: "Sofía Arango", rating: 5, description: "Excellent code quality and very proactive. He helped us scale our architecture to support thousands of concurrent users seamlessly." },
-    { name: "Diego Torres", rating: 5, description: "The best technical decision we made was hiring him. His architectural vision and commitment allowed us to launch on time." }
+    {
+      name: "Carlos Méndez",
+      rating: 5,
+      description: "I am happy with Alejandro's work; from day one he understood exactly what we needed. He was always available to answer questions."
+    },
+    {
+      name: "Laura Jiménez",
+      rating: 4,
+      description: "What I value most was the communication throughout the project. He met the agreed deadlines and the site turned out just as we imagined."
+    },
+    {
+      name: "Miguel Salazar",
+      rating: 5,
+      description: "He is one of those professionals who truly get involved in your project. He brings good ideas, listens, and finds the best solution without complicating things."
+    },
+    {
+      name: "Sofía Arango",
+      rating: 5,
+      description: "We are very satisfied with the work. The whole process was clear, organized, and we always felt our project was in good hands."
+    },
+    {
+      name: "Diego Torres",
+      rating: 5,
+      description: "More than a developer, he was a great ally throughout the project. He always responded quickly and the final result was even better than we expected."
+    }
   ],
-  stats: { projects: "Projects", experience: "Years exp.", satisfaction: "Satisfaction" },
+  stats: { projects: "Projects", experience: "Years Exp.", satisfaction: "Happy Clients" },
   links: {
-    portfolio: { title: "Portfolio", description: "Recent projects and success stories" },
+    portfolio: { title: "Blog", description: "Find interesting articles" },
     company: { title: "Company", description: "Learn more about our vision and services" },
     cv: { title: "Download CV", description: "My detailed background and experience" }
   },
-  cta: { eyebrow: "// limited availability", title: "Ready to take your idea to production?", subtitle: "Book a free 30-min call and define the scope of your project.", button: "Book my free call" },
+  cta: { eyebrow: "Hello! 👋", title: "Ready to bring your idea to production?", subtitle: "Book a free 30-min video call and let's define the scope of your project together.", button: "Book now" },
   wa_modal: {
-    greeting: "Hi there",
-    title: "Please fill in the details",
+    greeting: "Hello",
+    title: "Please fill in your details",
     name_label: "Full Name",
     name_placeholder: "Your name",
     service_label: "Reason for contact",
@@ -29,7 +49,7 @@ window.locales.en = {
     opt_collab: "Collaboration",
     opt_other: "Other",
     send: "Send",
-    email_fallback: "or write to email:"
+    email_fallback: "or write to the email:"
   },
-  footer: "© 2026 Alejandro Nes — Designed & built with passion"
+  footer: "© 2026 Alejandro Nes — Made with dedication"
 };

@@ -5,50 +5,83 @@
     "flag": "🇪🇸"
   },
   "profile": {
-    "role": "Desarrollador Web & Software",
-    "bio": "Diseño y construyo productos digitales de alto rendimiento — desde e-commerce hasta automatización con IA. Código limpio, resultados medibles."
+    "role": "Ingeniero de Software",
+    "bio": "Desarrollo soluciones de software de alto rendimiento, desde plataformas de e-commerce hasta aplicaciones y automatizaciones con inteligencia artificial."
   },
   "sections": {
-    "socials": "Conecta · Redes",
-    "services": "Servicios · 05",
-    "stack": "Stack · Tecnologías",
-    "stats": "Trayectoria · En números"
+    "socials": "Redes Sociales",
+    "testimonials": "Testimonios",
+    "stack": "Tecnologías que uso",
+    "stats": "Trayectoria"
   },
   "socials": {
-    "whatsapp": "Contactar por WhatsApp"
+    "whatsapp": "Mi sitio web",
+    "whatsapp_sub": "Encuentra mis servicios y portafolio"
   },
-  "services": [
+  "testimonials": [
     {
-      "title": "Desarrollo Web",
-      "description": "Sitios y aplicaciones a medida, enfocados en velocidad, accesibilidad y experiencias de usuario excepcionales y altamente escalables."
+      "name": "Carlos Méndez",
+      "rating": 5,
+      "description": "Estoy feliz con el trabajo de Alejandro, desde el primer día entendió exactamente lo que necesitábamos. Siempre estuvo disponible para resolver dudas"
     },
     {
-      "title": "Tiendas Online",
-      "description": "Desarrollo de e-commerce optimizado para maximizar la conversión, con integraciones de pago seguras y gestión de inventario eficiente."
+      "name": "Laura Jiménez",
+      "rating": 4,
+      "description": "Lo que más valoro fue la comunicación durante todo el proyecto. Cumplió con los tiempos acordados y el sitio quedó justo como lo imaginábamos."
     },
     {
-      "title": "Automatización",
-      "description": "Creación de flujos de trabajo inteligentes, conectando tus herramientas diarias para ahorrar tiempo y reducir errores operativos."
+      "name": "Miguel Salazar",
+      "rating": 5,
+      "description": "Es de esos profesionales que realmente se involucran en tu proyecto. Aporta buenas ideas, escucha y busca la mejor solución sin complicar las cosas."
     },
     {
-      "title": "Soluciones con IA",
-      "description": "Integraciones de inteligencia artificial para tu negocio, desde chatbots inteligentes hasta análisis predictivo y generación de contenido automatizado."
+      "name": "Sofía Arango",
+      "rating": 5,
+      "description": "Quedamos muy satisfechos con el trabajo. Todo el proceso fue claro, ordenado y siempre sentimos que nuestro proyecto estaba en buenas manos."
     },
     {
-      "title": "Auditoría UI/UX",
-      "description": "Análisis exhaustivo de tus interfaces digitales para encontrar áreas de mejora, optimizar flujos de usuario y potenciar la usabilidad global."
+      "name": "Diego Torres",
+      "rating": 5,
+      "description": "Más que un desarrollador, fue un gran aliado durante todo el proyecto. Siempre respondió con rapidez y el resultado final fue incluso mejor de lo que esperábamos."
     }
   ],
   "stats": {
     "projects": "Proyectos",
     "experience": "Años exp.",
-    "satisfaction": "Satisfacción"
+    "satisfaction": "Clientes felices"
+  },
+  "links": {
+    "portfolio": {
+      "title": "Blog",
+      "description": "Encuentra artículos interesantes"
+    },
+    "company": {
+      "title": "Empresa",
+      "description": "Conoce más sobre nuestra visión y servicios"
+    },
+    "cv": {
+      "title": "Descargar CV",
+      "description": "Mi trayectoria y experiencia detallada"
+    }
   },
   "cta": {
-    "eyebrow": "// disponibilidad limitada",
+    "eyebrow": "¡Hola! 👋",
     "title": "¿Listo para llevar tu idea a producción?",
-    "subtitle": "Agenda una llamada gratuita de 30 min y define el alcance de tu proyecto.",
-    "button": "Agendar mi llamada gratuita"
+    "subtitle": "Agenda una video llamada gratuita de 30 min y definamos juntos el alcance de tu proyecto.",
+    "button": "Agendar ahora"
   },
-  "footer": "© 2026 Alejandro Nes — Diseñado & construido con pasión"
+  "wa_modal": {
+    "greeting": "Hola",
+    "title": "Por favor completa los datos",
+    "name_label": "Nombre completo",
+    "name_placeholder": "Tu nombre",
+    "service_label": "Motivo de contacto",
+    "select_default": "Selecciona una opción",
+    "opt_service": "Necesito un servicio",
+    "opt_collab": "Colaboración",
+    "opt_other": "Otro",
+    "send": "Enviar",
+    "email_fallback": "o escribir al correo:"
+  },
+  "footer": "© 2026 Alejandro Nes — Hecho con dedicación"
 }

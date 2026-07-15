@@ -1,23 +1,43 @@
 window.locales = window.locales || {};
 window.locales.es = {
   meta: { lang: "es", label: "Español", flag: "🇪🇸" },
-  profile: { role: "Desarrollador Web & Software", bio: "Diseño y construyo productos digitales de alto rendimiento — desde e-commerce hasta automatización con IA. Código limpio, resultados medibles." },
-  sections: { socials: "Conectemos", testimonials: "Testimonios", stack: "Tecnologías", stats: "Trayectoria · En números" },
-  socials: { whatsapp: "Contactar por WhatsApp", whatsapp_sub: "Respuesta rápida · Disponible ahora" },
+  profile: { role: "Ingeniero de Software", bio: "Desarrollo soluciones de software de alto rendimiento, desde plataformas de e-commerce hasta aplicaciones y automatizaciones con inteligencia artificial." },
+  sections: { socials: "Redes Sociales", testimonials: "Testimonios", stack: "Tecnologías que uso", stats: "Trayectoria" },
+  socials: { whatsapp: "Mi sitio web", whatsapp_sub: "Encuentra mis servicios y portafolio" },
   testimonials: [
-    { name: "Carlos Méndez", rating: 5, description: "Alejandro transformó nuestra idea en una plataforma increíble. Su atención al detalle y capacidad de resolución son insuperables. 100% recomendado." },
-    { name: "Laura Jiménez", rating: 5, description: "Trabajar con él fue una experiencia fenomenal. Logró optimizar los tiempos de carga y mejorar el diseño de nuestra web." },
-    { name: "Miguel Salazar", rating: 5, description: "Profesional, creativo y siempre dispuesto a ayudar. El sistema que desarrolló superó todas nuestras expectativas desde el primer día." },
-    { name: "Sofía Arango", rating: 5, description: "Excelente calidad de código y muy proactivo. Nos ayudó a escalar nuestra arquitectura para soportar miles de usuarios concurrentes sin problemas." },
-    { name: "Diego Torres", rating: 5, description: "La mejor decisión técnica que tomamos fue contar con él. Su visión arquitectónica y compromiso nos permitieron lanzar el producto a tiempo." }
+    {
+      name: "Carlos Méndez",
+      rating: 5,
+      description: "Estoy feliz con el trabajo de Alejandro, desde el primer día entendió exactamente lo que necesitábamos. Siempre estuvo disponible para resolver dudas"
+    },
+    {
+      name: "Laura Jiménez",
+      rating: 4,
+      description: "Lo que más valoro fue la comunicación durante todo el proyecto. Cumplió con los tiempos acordados y el sitio quedó justo como lo imaginábamos."
+    },
+    {
+      name: "Miguel Salazar",
+      rating: 5,
+      description: "Es de esos profesionales que realmente se involucran en tu proyecto. Aporta buenas ideas, escucha y busca la mejor solución sin complicar las cosas."
+    },
+    {
+      name: "Sofía Arango",
+      rating: 5,
+      description: "Quedamos muy satisfechos con el trabajo. Todo el proceso fue claro, ordenado y siempre sentimos que nuestro proyecto estaba en buenas manos."
+    },
+    {
+      name: "Diego Torres",
+      rating: 5,
+      description: "Más que un desarrollador, fue un gran aliado durante todo el proyecto. Siempre respondió con rapidez y el resultado final fue incluso mejor de lo que esperábamos."
+    }
   ],
-  stats: { projects: "Proyectos", experience: "Años exp.", satisfaction: "Satisfacción" },
+  stats: { projects: "Proyectos", experience: "Años exp.", satisfaction: "Clientes felices" },
   links: {
-    portfolio: { title: "Portafolio", description: "Proyectos y casos de éxito recientes" },
+    portfolio: { title: "Blog", description: "Encuentra artículos interesantes" },
     company: { title: "Empresa", description: "Conoce más sobre nuestra visión y servicios" },
     cv: { title: "Descargar CV", description: "Mi trayectoria y experiencia detallada" }
   },
-  cta: { eyebrow: "// disponibilidad limitada", title: "¿Listo para llevar tu idea a producción?", subtitle: "Agenda una llamada gratuita de 30 min y define el alcance de tu proyecto.", button: "Agendar mi llamada gratuita" },
+  cta: { eyebrow: "¡Hola! 👋", title: "¿Listo para llevar tu idea a producción?", subtitle: "Agenda una video llamada gratuita de 30 min y definamos juntos el alcance de tu proyecto.", button: "Agendar ahora" },
   wa_modal: {
     greeting: "Hola",
     title: "Por favor completa los datos",
@@ -31,5 +51,5 @@ window.locales.es = {
     send: "Enviar",
     email_fallback: "o escribir al correo:"
   },
-  footer: "© 2026 Alejandro Nes — Diseñado & construido con pasión"
+  footer: "© 2026 Alejandro Nes — Hecho con dedicación"
 };

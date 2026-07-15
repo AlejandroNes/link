@@ -15,9 +15,9 @@
 
 // ── Config ────────────────────────────────────────────────
 const AVAILABLE_LANGS = ['es', 'en'];
-const DEFAULT_LANG    = 'es';
-const COOKIE_NAME     = 'nes_lang';
-const COOKIE_DAYS     = 365;
+const DEFAULT_LANG = 'es';
+const COOKIE_NAME = 'nes_lang';
+const COOKIE_DAYS = 365;
 
 // ── Service card SVG icons (keyed by index) ────────────────
 const SERVICE_ICONS = [
@@ -56,7 +56,7 @@ function applyTranslations(translations) {
   if (!translations) return;
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key   = el.getAttribute('data-i18n');
+    const key = el.getAttribute('data-i18n');
     const value = t(translations, key);
     if (value === null) return;
 
@@ -95,8 +95,8 @@ function renderTestimonials(translations) {
   // Create cards
   const cardsHtml = translations.testimonials.map((t, i) => {
     return `
-    <div class="link-btn" style="flex-direction: column; align-items: flex-start; width: 65vw; max-width: 320px; flex: 0 0 auto;">
-      <div style="display: flex; gap: 2px; margin-bottom: 8px;">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">
         ${starSvg.repeat(t.rating)}
       </div>
       <div class="link-text" style="width: 100%;">
@@ -115,7 +115,7 @@ function renderLangSwitch(allTranslations, currentLang) {
   if (!container) return;
 
   container.innerHTML = AVAILABLE_LANGS.map(code => {
-    const meta    = allTranslations[code]?.meta;
+    const meta = allTranslations[code]?.meta;
     const isActive = code === currentLang;
     const flagImg = code === 'es' ? 'images/idioma español.png' : 'images/idioma ingles.png';
     return `
@@ -180,25 +180,25 @@ function initStatsAnimation() {
     // Extract the numeric part and the suffix (+, %, etc)
     const match = text.match(/^(\d+)(.*)$/);
     if (!match) return;
-    
+
     const target = parseInt(match[1], 10);
     const suffix = match[2];
     const duration = 2000; // 2 seconds
     const fps = 60;
     const frames = duration / (1000 / fps);
     let currentFrame = 0;
-    
+
     // Set initial text to 0 + suffix
     el.innerText = '0' + suffix;
-    
+
     const counter = setInterval(() => {
       currentFrame++;
       // Easing out function for smooth deceleration
       const progress = 1 - Math.pow(1 - currentFrame / frames, 3);
       const currentVal = Math.floor(target * progress);
-      
+
       el.innerText = currentVal + suffix;
-      
+
       if (currentFrame >= frames) {
         clearInterval(counter);
         el.innerText = target + suffix; // Ensure exact final value
@@ -225,9 +225,9 @@ function initWhatsAppModal() {
   const modal = document.getElementById('wa-modal');
   const closeBtn = document.getElementById('wa-modal-close');
   const form = document.getElementById('wa-form');
-  
+
   const tooltip = document.getElementById('wa-tooltip');
-  
+
   if (!btn || !modal || !form) return;
 
   // Hide tooltip after 4 seconds automatically
@@ -250,10 +250,10 @@ function initWhatsAppModal() {
     e.preventDefault();
     const name = document.getElementById('wa-name').value.trim();
     const select = document.getElementById('wa-select').value;
-    
+
     if (name && select) {
       const phone = "59178790800";
-      const message = `Hola, soy ${name}. ${select}.`;
+      const message = `Hola Alejandro. Mi nombre es ${name} y te escribo desde tu sitio web.\n\nMe pongo en contacto contigo por el siguiente motivo: *${select}*.\n\nMe gustaría conversar al respecto, por favor. ¡Muchas gracias!`;
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
       modal.classList.remove('active');
@@ -270,7 +270,7 @@ function init() {
 
   renderLangSwitch(allTranslations, lang);
   applyTranslations(allTranslations[lang] || allTranslations[DEFAULT_LANG]);
-  
+
   initStatsAnimation();
   initWhatsAppModal();
 
