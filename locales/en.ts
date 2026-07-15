@@ -1,7 +1,6 @@
-window.locales = window.locales || {};
-window.locales.en = {
-  meta: { lang: "en", label: "English", flag: "🇺🇸" },
-  profile: { role: "Software Engineer", bio: "I develop high-performance software solutions, from e-commerce platforms to AI-powered applications and automations." },
+export const en = {
+  meta: { lang: "en", label: "English", flag: "🇺🇸", flagUrl: "https://flagcdn.com/w40/us.png" },
+  profile: { role: "Software Engineer", bio: "Hello! 👋 I am a software developer specialized in creating web applications, AI, and automations. Here you will find my projects, experience, and social media." },
   sections: { socials: "Social Media", testimonials: "Testimonials", stack: "Tech Stack", stats: "Career" },
   socials: { whatsapp: "My Website", whatsapp_sub: "Find my services and portfolio" },
   testimonials: [

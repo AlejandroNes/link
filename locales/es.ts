@@ -1,7 +1,6 @@
-window.locales = window.locales || {};
-window.locales.es = {
-  meta: { lang: "es", label: "Español", flag: "🇪🇸" },
-  profile: { role: "Ingeniero de Software", bio: "Desarrollo soluciones de software de alto rendimiento, desde plataformas de e-commerce hasta aplicaciones y automatizaciones con inteligencia artificial." },
+export const es = {
+  meta: { lang: "es", label: "Español", flag: "🇪🇸", flagUrl: "https://flagcdn.com/w40/es.png" },
+  profile: { role: "Ingeniero de Software", bio: "¡Hola! 👋 Soy, desarrollador de software especializado en crear aplicaciones web, IA y automatizaciones. Aquí encontrarás mis, proyectos, experiencia y mis redes sociales." },
   sections: { socials: "Redes Sociales", testimonials: "Testimonios", stack: "Tecnologías que uso", stats: "Trayectoria" },
   socials: { whatsapp: "Mi sitio web", whatsapp_sub: "Encuentra mis servicios y portafolio" },
   testimonials: [
