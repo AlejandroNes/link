@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
-export default function WhatsAppModal({ translations }: { translations: any }) {
+export default function WhatsAppModal() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
   const [name, setName] = useState("");
@@ -17,7 +19,8 @@ export default function WhatsAppModal({ translations }: { translations: any }) {
     e.preventDefault();
     if (name.trim() && reason) {
       const phone = "59178790800";
-      const message = `Hola Alejandro. Mi nombre es ${name.trim()} y te escribo desde tu sitio web.\n\nMe pongo en contacto contigo por el siguiente motivo: *${reason}*.\n\nMe gustaría conversar al respecto, por favor. ¡Muchas gracias!`;
+      const template = t.wa_modal.message_template || "Hola Alejandro. Mi nombre es {name} y te escribo desde tu sitio web.\n\nMe pongo en contacto contigo por el siguiente motivo: *{reason}*.\n\nMe gustaría conversar al respecto, por favor. ¡Muchas gracias!";
+      const message = template.replace("{name}", name.trim()).replace("{reason}", reason);
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
       setIsOpen(false);
@@ -30,7 +33,7 @@ export default function WhatsAppModal({ translations }: { translations: any }) {
     <>
       <div className={`wa-modal ${isOpen ? "active" : ""}`} id="wa-modal">
         <div className="wa-modal-header">
-          <h3>{translations.wa_modal.title}</h3>
+          <h3>{t.wa_modal.title}</h3>
           <button type="button" className="wa-modal-close" id="wa-modal-close" aria-label="Close modal" onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
               <path d="M18 6L6 18M6 6l12 12" />
@@ -39,19 +42,19 @@ export default function WhatsAppModal({ translations }: { translations: any }) {
         </div>
         <form className="wa-form" id="wa-form" onSubmit={handleSubmit}>
           <div className="wa-field">
-            <label htmlFor="wa-name" className="wa-label">{translations.wa_modal.name_label}</label>
+            <label htmlFor="wa-name" className="wa-label">{t.wa_modal.name_label}</label>
             <input
               type="text"
               id="wa-name"
               className="wa-input"
-              placeholder={translations.wa_modal.name_placeholder}
+              placeholder={t.wa_modal.name_placeholder}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
           <div className="wa-field">
-            <label htmlFor="wa-select" className="wa-label">{translations.wa_modal.service_label}</label>
+            <label htmlFor="wa-select" className="wa-label">{t.wa_modal.service_label}</label>
             <select
               id="wa-select"
               className="wa-select"
@@ -59,27 +62,27 @@ export default function WhatsAppModal({ translations }: { translations: any }) {
               onChange={(e) => setReason(e.target.value)}
               required
             >
-              <option value="" disabled hidden>{translations.wa_modal.select_default}</option>
-              <option value={translations.wa_modal.opt_service}>{translations.wa_modal.opt_service}</option>
-              <option value={translations.wa_modal.opt_collab}>{translations.wa_modal.opt_collab}</option>
-              <option value={translations.wa_modal.opt_other}>{translations.wa_modal.opt_other}</option>
+              <option value="" disabled hidden>{t.wa_modal.select_default}</option>
+              <option value="Necesito un servicio">{t.wa_modal.opt_service}</option>
+              <option value="Colaboración">{t.wa_modal.opt_collab}</option>
+              <option value="Otro">{t.wa_modal.opt_other}</option>
             </select>
           </div>
           <button type="submit" className="wa-submit-btn">
-            <span>{translations.wa_modal.send}</span>
+            <span>{t.wa_modal.send}</span>
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
               <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
             </svg>
           </button>
           <div className="wa-email-text">
-            <span>{translations.wa_modal.email_fallback}</span> <a href="mailto:contacto@alejandrones.com">contacto@alejandrones.com</a>
+            <span>{t.wa_modal.email_fallback}</span> <a href="mailto:contacto@alejandrones.com">contacto@alejandrones.com</a>
           </div>
         </form>
       </div>
 
       {showTooltip && (
         <div className="wa-tooltip" id="wa-tooltip">
-          <span>{translations.wa_modal.greeting}</span> 👋
+          <span>{t.wa_modal.greeting}</span> 👋
         </div>
       )}
 

@@ -1,10 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { es } from "../locales/es";
-import { en } from "../locales/en";
-
-const locales: Record<string, any> = { es, en };
+import { locales } from "../locales";
 
 export default function LanguageSwitcher({
   currentLang,

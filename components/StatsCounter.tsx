@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
-export default function StatsCounter({ translations }: { translations: any }) {
+export default function StatsCounter() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,9 +27,9 @@ export default function StatsCounter({ translations }: { translations: any }) {
 
   return (
     <div className="stats" ref={containerRef}>
-      <StatItem target="80" suffix="+" label={translations.stats.projects} startAnimation={hasAnimated} />
-      <StatItem target="6" suffix="" label={translations.stats.experience} startAnimation={hasAnimated} />
-      <StatItem target="98" suffix="%" label={translations.stats.satisfaction} startAnimation={hasAnimated} />
+      <StatItem target="80" suffix="+" label={t.stats.projects} startAnimation={hasAnimated} />
+      <StatItem target="6" suffix="" label={t.stats.experience} startAnimation={hasAnimated} />
+      <StatItem target="98" suffix="%" label={t.stats.satisfaction} startAnimation={hasAnimated} />
     </div>
   );
 }

@@ -1,33 +1,33 @@
 export const es = {
-  meta: { lang: "es", label: "Español", flag: "🇪🇸", flagUrl: "https://flagcdn.com/w40/es.png" },
-  profile: { role: "Ingeniero de Software", bio: "¡Hola! 👋 Soy, desarrollador de software especializado en crear aplicaciones web, IA y automatizaciones. Aquí encontrarás mis, proyectos, experiencia y mis redes sociales." },
+  meta: { lang: "es", label: "Español", flag: "🇪🇸", flagUrl: "/images/idioma_espanol.png" },
+  profile: { role: "Ingeniero en Sistemas e Informática", bio: "¡Hola 👋, bienvenido! Aquí encontrarás todos mis enlaces, proyectos, redes sociales y formas de contactarte conmigo" },
   sections: { socials: "Redes Sociales", testimonials: "Testimonios", stack: "Tecnologías que uso", stats: "Trayectoria" },
   socials: { whatsapp: "Mi sitio web", whatsapp_sub: "Encuentra mis servicios y portafolio" },
   testimonials: [
     {
-      name: "Carlos Méndez",
+      name: "Andrés Rojas Lopez",
       rating: 5,
-      description: "Estoy feliz con el trabajo de Alejandro, desde el primer día entendió exactamente lo que necesitábamos. Siempre estuvo disponible para resolver dudas"
+      description: "Estoy feliz con el trabajo de Alejandro, el proyecto duro dos meses y siempre estuvo disponible para resolver dudas"
     },
     {
-      name: "Laura Jiménez",
+      name: "Laura Jiménez P.",
       rating: 4,
-      description: "Lo que más valoro fue la comunicación durante todo el proyecto. Cumplió con los tiempos acordados y el sitio quedó justo como lo imaginábamos."
+      description: "Lo que más me gustó fue la comunicación, estuvo atento a los detalles, cumplió con los plazos y el resultado quedó genial"
     },
     {
-      name: "Miguel Salazar",
+      name: "Miguel Salazar S.",
       rating: 5,
-      description: "Es de esos profesionales que realmente se involucran en tu proyecto. Aporta buenas ideas, escucha y busca la mejor solución sin complicar las cosas."
+      description: "Buscábamos una solución para la gestión de nuestros proyectos inmobiliarios y eso fue exactamente lo que obtuvimos."
     },
     {
-      name: "Sofía Arango",
+      name: "Sofia Arango Uvita",
       rating: 5,
-      description: "Quedamos muy satisfechos con el trabajo. Todo el proceso fue claro, ordenado y siempre sentimos que nuestro proyecto estaba en buenas manos."
+      description: "Migramos a una plataforma más moderna sin perder información. Todo el proceso fue muy sencillo."
     },
     {
-      name: "Diego Torres",
+      name: "Diego Antonio B.",
       rating: 5,
-      description: "Más que un desarrollador, fue un gran aliado durante todo el proyecto. Siempre respondió con rapidez y el resultado final fue incluso mejor de lo que esperábamos."
+      description: "Buscábamos una forma de atender a nuestros clientes incluso fuera del horario. El chatbot quedó muy bien"
     }
   ],
   stats: { projects: "Proyectos", experience: "Años exp.", satisfaction: "Clientes felices" },
@@ -36,7 +36,13 @@ export const es = {
     company: { title: "Empresa", description: "Conoce más sobre nuestra visión y servicios" },
     cv: { title: "Descargar CV", description: "Mi trayectoria y experiencia detallada" }
   },
-  cta: { eyebrow: "¡Hola! 👋", title: "¿Listo para llevar tu idea a producción?", subtitle: "Agenda una video llamada gratuita de 30 min y definamos juntos el alcance de tu proyecto.", button: "Agendar ahora" },
+  cta: {
+    eyebrow: "¡Hola! 👋",
+    title: "¿Listo para llevar tu idea a producción?",
+    subtitle: "Agenda una video llamada gratuita de 30 min y definamos juntos el alcance de tu proyecto.",
+    button: "Agendar ahora",
+    whatsapp_message: "¡Hola, Alejandro! 👋 Vi tu perfil y me interesa desarrollar un proyecto. Me gustaría agendar una videollamada gratuita de 30 minutos para conversar sobre mi idea y conocer cómo podemos trabajar juntos."
+  },
   wa_modal: {
     greeting: "Hola",
     title: "Por favor completa los datos",
@@ -48,7 +54,14 @@ export const es = {
     opt_collab: "Colaboración",
     opt_other: "Otro",
     send: "Enviar",
-    email_fallback: "o escribir al correo:"
+    email_fallback: "o escribir al correo:",
+    message_template: "Hola Alejandro. Mi nombre es {name} y te escribo desde tu sitio web.\n\nMe pongo en contacto contigo por el siguiente motivo: *{reason}*.\n\nMe gustaría conversar al respecto, por favor. ¡Muchas gracias!"
   },
-  footer: "© 2026 Alejandro Nes — Hecho con dedicación"
+  redirect_modal: {
+    title: "Redirección a WhatsApp",
+    message: "¿Deseas ser redirigido a WhatsApp para agendar tu videollamada?",
+    confirm: "Sí, ir a WhatsApp",
+    cancel: "Cancelar"
+  },
+  footer: "© 2026 Alejandro Nes · Desarrollado con ❤️"
 };

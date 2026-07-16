@@ -31,6 +31,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 html {
@@ -153,6 +154,7 @@ body::after {
   gap: 14px;
   opacity: 0;
   animation: riseIn 0.6s var(--ease) 0.08s forwards;
+  margin-top: 30px;
 }
 
 .avatar-wrap {
@@ -505,12 +507,15 @@ body::after {
   display: flex;
   gap: 14px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   padding-bottom: 8px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   margin: 0 -20px;
   padding: 0 20px 8px;
+  touch-action: pan-x;
+  cursor: grab;
 }
 
 .carousel-container::-webkit-scrollbar {
@@ -562,6 +567,7 @@ body::after {
   min-width: 240px;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: pan-x;
 }
 
 .testimonial-stars {
@@ -960,6 +966,7 @@ footer {
   flex-direction: column;
   align-items: flex-end;
   gap: 16px;
+  pointer-events: none;
 }
 
 .wa-float-btn {
@@ -975,6 +982,7 @@ footer {
   align-items: center;
   justify-content: center;
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  pointer-events: auto;
 }
 
 @media (hover: hover) {
@@ -999,14 +1007,16 @@ footer {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
   transform: translateY(20px) scale(0.95);
   transform-origin: bottom right;
-  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s var(--ease);
 }
 
 .wa-modal.active {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
   transform: translateY(0) scale(1);
 }
 
@@ -1175,3 +1185,180 @@ footer {
   color: var(--purple-glow);
   text-decoration: underline;
 }
+
+/* ── Mobile Touch Fixes ── */
+@media (hover: none) and (pointer: coarse) {
+  /* Ensure all clickable elements respond immediately to taps */
+  a, button, .social-btn, .link-btn, .tech-chip, .wa-float-btn, .lang-btn, .cta-btn {
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(108, 58, 232, 0.15);
+  }
+
+  /* Active tap feedback for social buttons */
+  .social-btn:active {
+    transform: scale(0.92);
+    border-color: var(--purple-glow);
+    background: rgba(108, 58, 232, 0.14);
+  }
+
+  /* Active tap feedback for link buttons */
+  .link-btn:active {
+    transform: scale(0.98);
+    border-color: var(--line-strong);
+  }
+
+  .link-btn:active::before {
+    opacity: 1;
+  }
+
+  /* Active tap feedback for tech chips */
+  .tech-chip:active {
+    transform: scale(0.95);
+    border-color: var(--purple-glow);
+  }
+
+  /* WhatsApp float button */
+  .wa-float-btn:active {
+    transform: scale(0.9);
+  }
+
+  /* CTA button */
+  .cta-btn:active {
+    transform: scale(0.97);
+  }
+}
+
+/* ---------- Redirect Modal ---------- */
+.redirect-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 8, 18, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: fadeInOverlay 0.2s var(--ease);
+}
+
+.redirect-modal-content {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(20, 18, 32, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: scaleInModal 0.3s var(--ease);
+}
+
+.redirect-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.redirect-modal-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0;
+}
+
+.redirect-modal-close {
+  background: none;
+  border: none;
+  color: var(--gray);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s var(--ease);
+}
+
+.redirect-modal-close:hover {
+  color: var(--white);
+}
+
+.redirect-modal-body p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray);
+  margin: 0 0 24px 0;
+}
+
+.redirect-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.redirect-modal-btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.redirect-modal-btn.cancel-btn {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--gray);
+  flex: 1;
+}
+
+.redirect-modal-btn.cancel-btn:hover {
+  color: var(--white);
+  border-color: var(--gray);
+}
+
+.redirect-modal-btn.confirm-btn {
+  background: linear-gradient(135deg, var(--purple-1), var(--blue-1));
+  border: none;
+  color: var(--white);
+  flex: 1.5;
+}
+
+.redirect-modal-btn.confirm-btn:hover {
+  box-shadow: 0 0 20px rgba(107, 58, 232, 0.4);
+  transform: translateY(-1px);
+}
+
+.redirect-modal-btn.confirm-btn svg {
+  transition: transform 0.2s var(--ease);
+}
+
+.redirect-modal-btn.confirm-btn:hover svg {
+  transform: translateX(3px);
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

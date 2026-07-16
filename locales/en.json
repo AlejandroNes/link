@@ -2,53 +2,54 @@
   "meta": {
     "lang": "en",
     "label": "English",
-    "flag": "🇺🇸"
+    "flag": "🇺🇸",
+    "flagUrl": "/images/idioma_ingles.png"
   },
   "profile": {
-    "role": "Software Engineer",
-    "bio": "I develop high-performance software solutions, from e-commerce platforms to AI-powered applications and automations."
+    "role": "Systems and Informatics Engineer",
+    "bio": "Hi 👋, welcome! Here you'll find all my links, projects, social media accounts, and ways to contact me"
   },
   "sections": {
     "socials": "Social Media",
     "testimonials": "Testimonials",
-    "stack": "Tech Stack",
+    "stack": "Technologies I use",
     "stats": "Career"
   },
   "socials": {
-    "whatsapp": "My Website",
+    "whatsapp": "My website",
     "whatsapp_sub": "Find my services and portfolio"
   },
   "testimonials": [
     {
-      "name": "Carlos Méndez",
+      "name": "Andrés Rojas Lopez",
       "rating": 5,
-      "description": "I am happy with Alejandro's work; from day one he understood exactly what we needed. He was always available to answer questions."
+      "description": "I am happy with Alejandro's work; the project lasted two months and he was always available to answer questions"
     },
     {
-      "name": "Laura Jiménez",
+      "name": "Laura Jiménez P.",
       "rating": 4,
-      "description": "What I value most was the communication throughout the project. He met the agreed deadlines and the site turned out just as we imagined."
+      "description": "What I liked most was the communication; he was attentive to details, met the deadlines, and the result was great"
     },
     {
-      "name": "Miguel Salazar",
+      "name": "Miguel Salazar S.",
       "rating": 5,
-      "description": "He is one of those professionals who truly get involved in your project. He brings good ideas, listens, and finds the best solution without complicating things."
+      "description": "We were looking for a solution to manage our real estate projects, and that is exactly what we got."
     },
     {
-      "name": "Sofía Arango",
+      "name": "Sofia Arango Uvita",
       "rating": 5,
-      "description": "We are very satisfied with the work. The whole process was clear, organized, and we always felt our project was in good hands."
+      "description": "We migrated to a more modern platform without losing information. The whole process was very simple."
     },
     {
-      "name": "Diego Torres",
+      "name": "Diego Antonio B.",
       "rating": 5,
-      "description": "More than a developer, he was a great ally throughout the project. He always responded quickly and the final result was even better than we expected."
+      "description": "We were looking for a way to serve our clients even after hours. The chatbot turned out really well"
     }
   ],
   "stats": {
     "projects": "Projects",
-    "experience": "Years Exp.",
-    "satisfaction": "Happy Clients"
+    "experience": "Years exp.",
+    "satisfaction": "Happy clients"
   },
   "links": {
     "portfolio": {
@@ -61,19 +62,20 @@
     },
     "cv": {
       "title": "Download CV",
-      "description": "My detailed background and experience"
+      "description": "My detailed career and experience"
     }
   },
   "cta": {
     "eyebrow": "Hello! 👋",
     "title": "Ready to bring your idea to production?",
-    "subtitle": "Book a free 30-min video call and let's define the scope of your project together.",
-    "button": "Book now"
+    "subtitle": "Schedule a free 30-min video call and let's define the scope of your project together.",
+    "button": "Book now",
+    "whatsapp_message": "Hello, Alejandro! 👋 I saw your profile and I am interested in developing a project. I would like to schedule a free 30-minute video call to talk about my idea and learn how we can work together."
   },
   "wa_modal": {
     "greeting": "Hello",
-    "title": "Please fill in your details",
-    "name_label": "Full Name",
+    "title": "Please complete the details",
+    "name_label": "Full name",
     "name_placeholder": "Your name",
     "service_label": "Reason for contact",
     "select_default": "Select an option",
@@ -81,7 +83,14 @@
     "opt_collab": "Collaboration",
     "opt_other": "Other",
     "send": "Send",
-    "email_fallback": "or write to the email:"
+    "email_fallback": "or write to the email:",
+    "message_template": "Hello Alejandro. My name is {name} and I am writing to you from your website.\n\nI am contacting you for the following reason: *{reason}*.\n\nI would like to discuss this, please. Thank you very much!"
   },
-  "footer": "© 2026 Alejandro Nes — Made with dedication"
+  "redirect_modal": {
+    "title": "Redirect to WhatsApp",
+    "message": "Do you want to be redirected to WhatsApp to schedule your video call?",
+    "confirm": "Yes, go to WhatsApp",
+    "cancel": "Cancel"
+  },
+  "footer": "© 2026 Alejandro Nes · Made with ❤️"
 }
